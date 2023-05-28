@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="nav-logo">
+            <img src="https://i.imgur.com/s4hnguy.png" alt="" />
+          </a>
+          <div class="nav-links">
+            <a href="#" class="link">Pedidos</a>
+            <div class="link submenu">
+              <span>Administración</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+              >
+                <path d="m11.998 17 7-8h-14z"></path>
+              </svg>
+              <div role="dialog">
+                <div class="dialog-wrapper">
+                  <a href="/">Información logística, cambiaria y contacto</a>
+                  <hr />
+                  <a href="/">Catalogo, lista de precios y fichas técnicas</a>
+                  <hr />
+                  <a href="/">Gestión de distribuidores</a>
+                  <hr />
+                  <a href="/">Estadísticas</a>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="link">
+              <span> Chats </span>
+              <!-- Para que aparezca debes agregarle la clase active -->
+              <img
+                src="https://i.imgur.com/RttDC2W.gif"
+                id="ping"
+                class="ping"
+                alt="PING"
+              />
+            </a>
+          </div>
+          <div class="nav-side">
+            <div class="link submenu">
+              <div class="customer-wrapper">
+                <img
+                  class="customer-logo"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                />
+                <span>PROVEEDOR</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+              >
+                <path d="m11.998 17 7-8h-14z"></path>
+              </svg>
+              <div role="dialog">
+                <div class="dialog-wrapper">
+                  <a href="/">Cambiar Contraseña</a>
+                  <hr />
+                  <a href="/">Cambiar Correo</a>
+                  <hr />
+                  <a href="/">Acuerdo Comercial</a>
+                  <hr />
+                  <a href="/">Cerrar sesion</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Home page</h1>
+    </main>
+
+    <script>
+      const ping = document.querySelector('#ping');
+
+      // En esta funcion debes traer desde la BD el estatus de si tiene mensajes en el chat o no, y en caso de que si tenga se le agrega la clase active
+      function checkPing() {
+        fetch('/ping')
+          .then((res) => res.json())
+          .then((data) => {
+            if (data) {
+              ping.classList.add('active');
+            } else {
+              ping.classList.remove('active');
+            }
+          });
+      }
+
+      checkPing();
+    </script>
+  </body>
+</html>
