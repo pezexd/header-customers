@@ -1,3 +1,1 @@
-# header-customers
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/web-platform-umsd5q)
+En la linea 49 debes agregar la clase "active", tal que quede "ping active" para que se muestre el ping
